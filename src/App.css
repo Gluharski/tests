@@ -47,3 +47,7 @@ article.top-scorers {
 .top-scorers .aside-image-container, .main-container {
   padding: 10px;
 }
+
+.title-section {
+  text-transform: uppercase;
+}
