@@ -8,22 +8,26 @@ function Navigation() {
 	return (
 		<Navbar bg="light" expand="lg">
 			<Container>
-				<Navbar.Brand href="#home">Sports Portal</Navbar.Brand>
+				<Navbar.Brand href="#">Sports Portal</Navbar.Brand>
 				<Navbar.Toggle aria-controls="basic-navbar-nav" />
+				<Nav.Link href="#deets">Forum</Nav.Link>
 				<Navbar.Collapse id="basic-navbar-nav">
 					<Nav className="me-auto">
 						<NavDropdown title="Sports" id="basic-nav-dropdown">
-							<NavDropdown.Item href="#action/3.1">Football</NavDropdown.Item>
-							<NavDropdown.Item href="#action/3.2">Formula 1</NavDropdown.Item>
-							<NavDropdown.Item href="#action/3.3">NBA</NavDropdown.Item>
-							<NavDropdown.Item href="#action/3.3">CS:GO</NavDropdown.Item>
-							<NavDropdown.Item href="#action/3.3">LoL</NavDropdown.Item>
+							<NavDropdown.Item href="#">Soccer</NavDropdown.Item>
+							<NavDropdown.Item href="#">Formula 1</NavDropdown.Item>
+							{/* <NavDropdown.Item href="#">NBA</NavDropdown.Item> */}
+							<NavDropdown.Divider />
+							<NavDropdown.Item href="#">CS:GO</NavDropdown.Item>
+							<NavDropdown.Item href="#">Valorant</NavDropdown.Item>
+							<NavDropdown.Item href="#">LoL</NavDropdown.Item>
+							<NavDropdown.Item href="#">WoW</NavDropdown.Item>
 						</NavDropdown>
 					</Nav>
 				</Navbar.Collapse>
 				<Nav>
 					<Nav.Link href="#deets">About</Nav.Link>
-						<Button variant="primary">Sign Up/Log in</Button>
+						<Button variant="primary" className='user-btn'>Sign Up/Log in</Button>
 					{/* <Nav.Link eventKey={2} href="#memes"> */}
 						{/* Sign in/ Log in */}
 					{/* </Nav.Link> */}
