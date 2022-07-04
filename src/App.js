@@ -1,13 +1,13 @@
 import "./App.css";
 
-// import PlayersList from "./components/TopScorers/PlayersList";
-import FormulaOne from "./components/FormulaOne/FormulaOne";
+import PlayersList from "./components/TopScorers/PlayersList";
+// import FormulaOne from "./components/FormulaOne/FormulaOne";
 import LiveMatches from './components/LiveMatches/LiveMatchesLits';
 
 function App() {
   return (
     <>
-      {/* <PlayersList /> */}
+      <PlayersList />
       {/* <FormulaOne /> */}
       <LiveMatches />
     </>

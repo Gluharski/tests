@@ -1,5 +1,4 @@
 export const PlayerCard = ({data}) => {
-  console.log(data)
   return(
     <>
       <article className="top-scorers">

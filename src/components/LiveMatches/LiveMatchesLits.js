@@ -14,7 +14,7 @@ const LiveMatches = () => {
   };
   
   useEffect(() => {
-    fetch('https://api-football-v1.p.rapidapi.com/v3/fixtures?date=2021-07-03', options)
+    fetch('https://api-football-v1.p.rapidapi.com/v3/fixtures?date=2021-07-15', options)
       .then(response => response.json())
       .then(data => {
         const matches = data.response;
