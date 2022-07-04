@@ -1,5 +1,5 @@
 function MatchCard(props) {
-  // console.log(data)
+  console.log(props.data)
 
   const homeTeam = props.data.teams.home.name;
   const awayTeam = props.data.teams.away.name;

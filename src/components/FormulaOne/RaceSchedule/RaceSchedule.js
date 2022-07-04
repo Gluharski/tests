@@ -1,7 +1,10 @@
-import {useState, useEffect} from 'react';
+import { useState, useEffect } from 'react';
+
+import Race from './Race/Race';
 
 export const RaceSchedule = () => {
-  const [schedule, setSchedule] = useState('');
+  const [schedule, setSchedule] = useState([]);
+
   const options = {
     method: 'GET',
     headers: {
@@ -9,20 +12,19 @@ export const RaceSchedule = () => {
       'X-RapidAPI-Host': 'f1-race-schedule.p.rapidapi.com'
     }
   };
-  
+
   useEffect(() => {
     fetch('https://f1-race-schedule.p.rapidapi.com/api', options)
       .then(response => response.json())
-      .then(response => console.log(response))
+      .then(data => {
+        setSchedule(data);
+      })
       .catch(err => console.error(err));
   }, []);
 
-  return(
+  return (
     <>
-      <h2 className='title-section'>
-        F1 Schedule Component
-      </h2>
-      {schedule}
+      {schedule.map(x => <Race data={x} />)}
     </>
   )
 };

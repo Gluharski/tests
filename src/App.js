@@ -1,19 +1,22 @@
+import { Route, Routes } from 'react-router-dom';
 import "./App.css";
 
-import PlayersList from "./components/TopScorers/PlayersList";
-// import FormulaOne from "./components/FormulaOne/FormulaOne";
-import LiveMatches from './components/LiveMatches/LiveMatchesLits';
-import Navigation from './components/Navbar/Navbar';
+// import Navbar from './components/Navbar/Navbar';
+import FormulaOne from "./components/FormulaOne/FormulaOne";
+import LoL from './components/LoL/LeagueOfLegends';
 
 function App() {
   return (
     <>
-      <Navigation />
-      <PlayersList />
-      {/* <FormulaOne /> */}
-      <LiveMatches />
+      <Routes>
+        <Route path="/f1" exact element={<FormulaOne />} />
+        <Route path="/league-of-legends" element={<LoL />} />
+      </Routes>
+      {/* <Navbar /> */}
+      {/* <PlayersList /> */}
+      {/* <LiveMatches /> */}
     </>
   );
-}
+};
 
 export default App;
