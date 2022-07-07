@@ -3,16 +3,18 @@ import "./App.css";
 
 // import Navbar from './components/Navbar/Navbar';
 import FormulaOne from "./components/FormulaOne/FormulaOne";
-import LoL from './components/LoL/LeagueOfLegends';
+
+import Navbar from './components/Navbar/Navbar';
 
 function App() {
   return (
     <>
       <Routes>
         <Route path="/f1" exact element={<FormulaOne />} />
-        <Route path="/league-of-legends" element={<LoL />} />
       </Routes>
-      {/* <Navbar /> */}
+      <div className="site-wrapper">
+        <Navbar />
+      </div>
       {/* <PlayersList /> */}
       {/* <LiveMatches /> */}
     </>
