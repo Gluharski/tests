@@ -13,16 +13,18 @@ import About from './components/views/About/About';
 function App() {
   return (
     <Container>
-    <Grid container>
-      <Routes>
-          <Route path='home' exact element={<Home />} />
-          <Route path="live" element={<Live />} />
-          <Route path="videos" element={<Videos />} />
-          <Route path="discussions" element={<Discussions />} />
-          <Route path="about" element={<About />} />
-      </Routes>
-      <Navbar />
-    </Grid>
+      <Grid container>
+
+        <Routes>
+            <Route path='home' exact element={<Home />} />
+            <Route path="live" element={<Live />} />
+            <Route path="videos" element={<Videos />} />
+            <Route path="discussions" element={<Discussions />} />
+            <Route path="about" element={<About />} />
+        </Routes>
+        
+        <Navbar />
+      </Grid>
     </Container>
   );
 };
