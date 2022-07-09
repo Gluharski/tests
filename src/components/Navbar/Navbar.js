@@ -1,47 +1,46 @@
-import { useState } from 'react';
-import styles from './Navbar.module.css';
+import Drawer from '@mui/material/Drawer';
+import Toolbar from '@mui/material/Toolbar';
+import List from '@mui/material/List';
+import Divider from '@mui/material/Divider';
+import ListItem from '@mui/material/ListItem';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+import InboxIcon from '@mui/icons-material/MoveToInbox';
+
+import { mainNavbarItem } from '../constants/navbarListItems';
 
 function Navbar() {
-	const [isHovered, setIsHovered] = useState(false);
-	const [rotateArrow, setRotateArrow] = useState('arrow');
-
-	const toggleMenuItems = () => {
-		setIsHovered(isHovered => !isHovered);
-		
-		if (!isHovered) {
-			setRotateArrow('rotate-dropdown-arrow');
-		} else {
-			setRotateArrow('arrow');
-		}
-	};
-
-	const showHiddenDropdownListItems = () => {
-		return (
-			<ul className="dropdown">
-				<li><a href="/">Football</a></li>
-				<li><a href="/">Formula 1</a></li>
-				<li><a href="/">Fall Guys</a></li>
-			</ul>
-		)
-	};
+	const drawerWidth = 240;
 
 	return (
-		<nav className={styles['header-navbar']}>
-			<ul>
-				<li><a href="/">Home</a></li>
-				<li onClick={toggleMenuItems}>
-					Sports
-
-					<div className={styles[rotateArrow]}></div>
-
-					{isHovered
-						? showHiddenDropdownListItems()
-						: null
-					}
-				</li>
-			</ul>
-		</nav>
-	)
+		<Drawer
+			sx={{
+				width: drawerWidth,
+				flexShrink: 0,
+				'& .MuiDrawer-paper': {
+					width: drawerWidth,
+					boxSizing: 'border-box',
+					backgroundColor: '#101F33',
+					color: 'rgba(255, 255, 255, 0.7)'
+				},
+			}}
+			variant="permanent"
+			anchor="left"
+		>
+			<Toolbar />
+			<Divider />
+			<List>
+				{mainNavbarItem.map((text, index) => (
+					<ListItem key={text.id} button>
+						<ListItemIcon sx={{ color: 'rgba(255, 255, 255, 0.7)'}}>
+							{text.icon}
+						</ListItemIcon>
+						<ListItemText primary={text.label} />
+					</ListItem>
+				))}
+			</List>
+		</Drawer>
+	);
 };
 
 export default Navbar;
