@@ -5,11 +5,12 @@ import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
 
 import { mainNavbarItem } from '../constants/navbarListItems';
+import { useParams, useNavigate } from 'react-router-dom';
 
 function Navbar() {
+	const navigate = useNavigate();
 	const drawerWidth = 240;
 
 	return (
@@ -30,12 +31,16 @@ function Navbar() {
 			<Toolbar />
 			<Divider />
 			<List>
-				{mainNavbarItem.map((text, index) => (
-					<ListItem key={text.id} button>
+				{mainNavbarItem.map(item => (
+					<ListItem
+						button
+						key={item.id}
+						onClick={() => navigate(item.route)}
+					>
 						<ListItemIcon sx={{ color: 'rgba(255, 255, 255, 0.7)'}}>
-							{text.icon}
+							{item.icon}
 						</ListItemIcon>
-						<ListItemText primary={text.label} />
+						<ListItemText primary={item.label} />
 					</ListItem>
 				))}
 			</List>

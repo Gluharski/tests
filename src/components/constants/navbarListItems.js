@@ -10,24 +10,30 @@ export const mainNavbarItem = [
 		id: 0,
 		icon: <DeckTwoToneIcon />,
 		label: 'Home',
-		route: 'route'
+		route: 'home'
 	},
 	{
 		id: 1,
 		icon: <LiveTvTwoToneIcon />,
 		label: 'Live',
-		route: 'route'
+		route: 'live'
 	},
 	{
 		id: 2,
 		icon: <CameraRollTwoToneIcon />,
 		label: 'Videos',
-		route: 'route'
+		route: 'videos'
 	},
 	{
 		id: 3,
 		icon: <InfoTwoToneIcon />,
+		label: 'Discussions',
+		route: 'discussions'
+	},
+	{
+		id: 4,
+		icon: <InfoTwoToneIcon />,
 		label: 'About',
-		route: 'route'
+		route: 'about'
 	}
 ];
